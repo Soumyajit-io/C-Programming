@@ -13,5 +13,5 @@ int main (){
     strcpy(book1.Name,"bookxyz");
     book1.Pages= 4;
     book1.Price=45.00;
-     printf("%s",book1.Name);
+    printf("%s",book1.Name);
 }
