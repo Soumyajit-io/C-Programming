@@ -1,46 +1,46 @@
-//wap to remove duplicate and add new it to new array using pointer
-#include<stdio.h>
-int main (){
-    int size;
-    int* ptrDup;
-    int* ptruni;
+#include <stdio.h>
 
-    // input
-    printf("Enter the length of the array: ");
-    scanf("%d", &size);
-    
-    int arr[size];
-    for (int i = 0; i < size; i++) {
-        printf("Enter the %dth element of the array: ", i);
+int main() {
+    int arr[100], unique[100];
+    int n, i, j, k = 0, isDuplicate;
+    int *ptrArr, *ptrUnique;
+
+    // Input the number of elements
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    // Input elements
+    printf("Enter %d elements:\n", n);
+    for (i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
     }
 
+    ptrArr = arr;         // Pointer to original array
+    ptrUnique = unique;   // Pointer to unique array
 
-    int arr2[size];
-    ptrDup = arr;
-    ptruni = arr2;
+    // Remove duplicates
+    for (i = 0; i < n; i++) {
+        isDuplicate = 0;
 
-    //Duplicate
-    int k = 0; // Number of unique elements
+        for (j = 0; j < k; j++) {
+            if (*(ptrArr + i) == *(ptrUnique + j)) {
+                isDuplicate = 1;
+                break;
+            }
+        }
 
-for (int i = 0; i < size; i++) {
-    int isDuplicate = 0;
-    
-    for (int j = 0; j < k; j++) {
-        if (*(ptrDup + i) == *(ptruni + j)) {
-            isDuplicate = 1;
-            break;
+        if (!isDuplicate) {
+            *(ptrUnique + k) = *(ptrArr + i);
+            k++;
         }
     }
 
-    if (!isDuplicate) {
-        *(ptruni + k) = *(ptrDup + i);
-        k++;
+    // Output unique array
+    printf("Array after removing duplicates:\n");
+    for (i = 0; i < k; i++) {
+        printf("%d ", *(ptrUnique + i));
     }
-}
+    printf("\n");
 
-    for (int i = 0; i < size; i++) {
-        printf("%d", arr2[i]);
-        
-    }
+    return 0;
 }
