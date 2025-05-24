@@ -31,7 +31,8 @@ int main(){
     for(int i=0;i<k;i++){//printing
             printf("%d",new[i]);
         }
-        return 0;
+        
+    return 0;
 
 
 }
