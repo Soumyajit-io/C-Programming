@@ -14,7 +14,7 @@ int main() {
         *ptr1 = *ptr2;
         *ptr2 = temp;
 
-        ptr1++;
+        ptr1++;  
         ptr2--;
     }
 

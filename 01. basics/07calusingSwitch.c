@@ -8,7 +8,8 @@ int main(){
         printf("Enter your choice: ");
         scanf("%d",&ch);
         switch(ch){
-            case 1: c=a+b;
+            case 1:
+                c=a+b;
                 printf("Additon is : %d\n",c);
                 break;
             case 2: c=a-b;
